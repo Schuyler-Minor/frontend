@@ -11,9 +11,11 @@ In the project directory, you can run:
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-## Meet the developers
+## Meet the developers working on the entire project
 
-Schuyler Minor, Aaron Mendez, Hailey Magoline, Jordanchaz, Anthony Coman, Danielle Yvette Strazzeri.
+Frontend: Schuyler Minor, Aaron Mendez, Hailey Magoline
+
+Backend: Jordan Chaz Cabanada, Anthony Coman, Danielle Yvette Strazzeri
 
 <!-- The page will reload when you make changes.\
 You may also see any lint errors in the console.
