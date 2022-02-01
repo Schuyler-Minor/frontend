@@ -130,8 +130,8 @@ table {
 	border-spacing: 0;
 }
 
-h1 {
-	font-size: 3em;
-}
-
 /* ONLY INCLUDE GLOBAL CSS STYLES IN THIS FILE */
+
+body {
+	background-color: rgb(239, 239, 239);
+}
