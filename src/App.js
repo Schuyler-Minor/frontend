@@ -1,4 +1,5 @@
 import React from 'react';
+import ClassList from './components/AvailClassList/AvailClassList'
 // import logo from './logo.svg';
 import './App.css';
 
@@ -11,3 +12,4 @@ function App() {
 }
 
 export default App;
+
