@@ -19,7 +19,7 @@ const ReserveClass = () => {
 
 	return (
 		<div>
-			<h1>My Classes</h1>
+			<h1>Reserve A Class</h1>
 
 			{classes.map((item, idx) => (
 				<Class key={idx} class={item} />
