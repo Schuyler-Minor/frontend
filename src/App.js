@@ -10,6 +10,9 @@ import MyClasses from './components/MyClasses/MyClasses';
 import ReserveClass from './components/ReserveClass/ReserveClass';
 import Logout from './components/Logout/Logout';
 
+// CreateClass testing
+import CreateClass from './components/CreateClass/CreateClass';
+
 function App() {
 	return (
 		<div className="App">
@@ -23,6 +26,9 @@ function App() {
 				<Route path="/reserve-class" element={<ReserveClass />} />
 				<Route path="/logout" element={<Logout />} />
 			</Routes>
+
+			{/* Create Class Testing */}
+			<CreateClass />
 		</div>
 	);
 }
