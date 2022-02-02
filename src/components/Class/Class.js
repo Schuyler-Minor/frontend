@@ -2,12 +2,13 @@ import React, { useState } from 'react';
 
 import { StyledClass } from '../../styled-comps/index'
 
- const Class = (props) => {
-     const { fitnessClass } = props;
-     const [open, setOpen] = useState(false);
-     const handleToggle = () => setOpen(!open);
-  return (
-    <StyledClass>
+const Class = (props) => {
+	// const { fitnessClass } = props;
+	const [open, setOpen] = useState(false);
+	const handleToggle = () => setOpen(!open);
+	return (
+		<StyledClass>
+			{/* <h3>{fitnessClass.name}</h3> */}
 
         <h3>{fitnessClass.class_name}</h3>
        
@@ -18,7 +19,7 @@ import { StyledClass } from '../../styled-comps/index'
     
                 <p> Intensity: {fitnessClass.intensity_level}</p>
 
-                <p>Location: {fitnessClass.location}</p>
+					<p>Location: {fitnessClass.location}</p>
 
                 <p>Duration: {fitnessClass.duration}</p>
 
