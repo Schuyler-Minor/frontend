@@ -86,7 +86,7 @@ const Login = ({ setLogged }) => {
 			<Label>
 				Password
 				<Input
-					type="text"
+					type="password"
 					name="password"
 					placeholder="Enter Password"
 					onChange={change}
