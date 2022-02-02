@@ -7,7 +7,8 @@ import Navbar from './components/Navbar/Navbar';
 import Login from './components/Login/Login';
 import SignUp from './components/SignUp/SignUp';
 import MyClasses from './components/MyClasses/MyClasses';
-import ReserveClass from './components/ReserveClass/ReserveClass';
+import AvailClassList from './components/AvailClassList/AvailClassList';
+//import ReserveClass from './components/ReserveClass/ReserveClass';
 import Logout from './components/Logout/Logout';
 
 function App() {
@@ -20,7 +21,7 @@ function App() {
 				<Route path="/signup" element={<SignUp />} />
 				{/* Need to align with paths from Hailey */}
 				<Route path="/my-classes" element={<MyClasses />} />
-				<Route path="/reserve-class" element={<ReserveClass />} />
+				<Route path="/available-classes" element={<AvailClassList />} />
 				<Route path="/logout" element={<Logout />} />
 			</Routes>
 		</div>

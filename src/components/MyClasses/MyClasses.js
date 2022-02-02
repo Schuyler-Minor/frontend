@@ -10,7 +10,7 @@ const MyClasses = () => {
 	const [classes, setClasses] = useState(initialState);
 	useEffect(() => {
 		axios
-			.get('https://61f8c846783c1d0017c44770.mockapi.io/api/v1/class')
+			.get('https://anywhere-fitness-07-backend.herokuapp.com/api/classes')
 			.then((res) => {
 				setClasses(res.data);
 			})

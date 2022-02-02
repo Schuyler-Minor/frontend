@@ -1,29 +1,48 @@
 import React, { useState }from 'react';
-import FilterForm from './FilterForm'
+import Class from '../Class/Class'
+import { StyledSearch, SearchBar } from '../../styled-comps/index'
 
-const ClassFilter = () => {
+const ClassFilter = (props) => {
 
-
-    const initialFormValues = {
-        yoga : false,
-        zumba: false,
-        insanity: false,
-      }
-
-    const [formValues, setFormValues] = useState(initialFormValues);
-
-  return (
-       
-    <div > 
-         <FilterForm
-             
-         />
-    </div>
+  const { classes } = props;
+  
+  const [searchTerm, setSearchTerm] = useState("");
  
+  return (    
+    <StyledSearch>
+      <SearchBar>
+          <input
+            type='text'
+            placeholder='Search Classes'
+            onChange={event => {setSearchTerm(event.target.value)}}
+        />
+      </SearchBar>
+      
+      {/* Still need to Add intensity filter */}
+      
+      { 
+        classes.filter((value) => {
+          if(searchTerm === "") {
+            return value;
+          } else if (value.class_name.toLowerCase().includes(searchTerm.toLowerCase())){
+            return value;
+          } else if (value.location.toLowerCase().includes(searchTerm.toLowerCase())){
+            return value;
+          } else if (value.class_type.toLowerCase().includes(searchTerm.toLowerCase())){
+            return value;
+          } else if (value.start_time.toLowerCase().includes(searchTerm.toLowerCase())){
+            return value;
+          }else if (value.duration.toLowerCase().includes(searchTerm.toLowerCase())){
+            return value;
+          }
+          }).map((value) => {
+            return(<Class key={value.class_id} fitnessClass={value}/>)
+          })
+        }
+
+    </StyledSearch>
     );
 }
 
 export default ClassFilter;
-
-
 
