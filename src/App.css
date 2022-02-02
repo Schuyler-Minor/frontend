@@ -1,5 +1,11 @@
 /* ONLY INCLUDE GLOBAL CSS STYLES IN THIS FILE */
-
+html,
 body {
-	background-color: rgb(239, 239, 239);
+	margin: 0;
+	height: 100vh;
+	background-image: radial-gradient(
+		circle farthest-corner at 10% 20%,
+		rgba(97, 186, 255, 1) 0%,
+		rgba(166, 239, 253, 1) 90.1%
+	);
 }
