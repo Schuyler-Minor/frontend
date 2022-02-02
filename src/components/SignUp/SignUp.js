@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useHistory } from 'react-router-dom';
+import { SECRET_CODE } from '../../mocks';
 import { Button, Form, Input, Label } from 'reactstrap';
 import './index.css';
 
@@ -49,24 +50,29 @@ const SignUp = ({ setLogged }) => {
 				})
 				// handle errors
 				.catch((err) => console.log(err));
+			window.alert('CORRECT!');
 		} else if (signup.role === 'instructor') {
-			const body = {
-				instructor_name: signup.name,
-				password: signup.password,
-			};
-			axios
-				.post(
-					'https://anywhere-fitness-07-backend.herokuapp.com/api/auth/instructors/register',
-					body
-				)
-				.then((res) => {
-					// Save Token to localStorage,
-					localStorage.setItem('token', res.data.token);
-					// Push user to /my-classes
-					push('/my-classes');
-					setLogged(true);
-				})
-				.catch((err) => console.log(err));
+			if (signup.code === SECRET_CODE) {
+				const body = {
+					instructor_name: signup.name,
+					password: signup.password,
+				};
+				axios
+					.post(
+						'https://anywhere-fitness-07-backend.herokuapp.com/api/auth/instructors/register',
+						body
+					)
+					.then((res) => {
+						// Save Token to localStorage,
+						localStorage.setItem('token', res.data.token);
+						// Push user to /my-classes
+						push('/my-classes');
+						setLogged(true);
+					})
+					.catch((err) => console.log(err));
+			} else {
+				window.alert('Wrong Code!');
+			}
 		}
 	};
 
@@ -87,7 +93,7 @@ const SignUp = ({ setLogged }) => {
 			<Label>
 				Password
 				<Input
-					type="text"
+					type="password"
 					name="password"
 					placeholder="Enter Password"
 					onChange={change}
