@@ -10,7 +10,7 @@ const MyClasses = () => {
 	const [classes, setClasses] = useState(initialState);
 	useEffect(() => {
 		axios
-			.get('https://anywhere-fitness-07-backend.herokuapp.com/api/classes')
+			.get('https://61f8c846783c1d0017c44770.mockapi.io/api/v1/class')
 			.then((res) => {
 				setClasses(res.data);
 			})
@@ -20,10 +20,10 @@ const MyClasses = () => {
 	return (
 		<div>
 			<h1>My Classes</h1>
-
+{/* 
 			{classes.map((item, idx) => (
 				<Class key={idx} class={item} />
-			))}
+			))} */}
 		</div>
 	);
 };

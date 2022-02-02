@@ -8,7 +8,6 @@ const Class = (props) => {
 	const handleToggle = () => setOpen(!open);
 	return (
 		<StyledClass>
-			{/* <h3>{fitnessClass.name}</h3> */}
 
         <h3>{fitnessClass.class_name}</h3>
        
@@ -39,37 +38,3 @@ const Class = (props) => {
 
 export default Class;
 
-// const StyledClass = styled.div`
-//     display: flex;
-//     flex-flow: column wrap;
-//     background: lightblue;
-//     margin: 3% auto;
-//     color: black;
-//     width: 50%;
-//     padding: 2%;
-
-//     & .infoButton{
-//         width: 50%;
-//         margin: 3% auto;
-//     }
-
-//     & .infoDiv{
-//         display: flex;
-//         flex-flow: column wrap;
-//     }
-
-//     & .infoDiv button {
-//         width: 50%;
-//         margin: auto;
-//     }
-
-
-//     h3 {
-//         margin: auto;
-//     }
-
-//     p{
-//         margin: auto;
-//     }
-    
-// `

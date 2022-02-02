@@ -18,8 +18,6 @@ const ClassFilter = (props) => {
         />
       </SearchBar>
       
-      {/* Still need to Add intensity filter */}
-      
       { 
         classes.filter((value) => {
           if(searchTerm === "") {
@@ -33,6 +31,8 @@ const ClassFilter = (props) => {
           } else if (value.start_time.toLowerCase().includes(searchTerm.toLowerCase())){
             return value;
           }else if (value.duration.toLowerCase().includes(searchTerm.toLowerCase())){
+            return value;
+          }else if (`${value.intensity_level}`.toLowerCase().includes(searchTerm.toLowerCase())){
             return value;
           }
           }).map((value) => {
