@@ -2,15 +2,23 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './index.css';
 
-const Navbar = () => {
+const Navbar = ({ logged }) => {
 	return (
 		<div>
 			<nav>
-				<Link to="/login">Login</Link>
-				<Link to="/signup">Sign Up</Link>
-				<Link to="/my-classes">My Classes</Link>
-				<Link to="/reserve-class">Reserve Class</Link>
-				<Link to="/logout">Logout</Link>
+				{!logged && (
+					<>
+						<Link to="/login">Login</Link>
+						<Link to="/register">Sign Up</Link>
+					</>
+				)}
+				{logged && (
+					<>
+						<Link to="/my-classes">My Classes</Link>
+						<Link to="/reserve-class">Reserve Class</Link>
+						<Link to="/logout">Logout</Link>
+					</>
+				)}
 			</nav>
 		</div>
 	);
