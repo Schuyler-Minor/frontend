@@ -11,7 +11,7 @@ import Logout from './components/Logout/Logout';
 
 
 // import CreateClass from './components/CreateClass/CreateClass';
-import AddClass from './components/CreateClass/AddClass';
+import AddClass from './components/AddClass/AddClass';
 
 function App() {
 	return (
