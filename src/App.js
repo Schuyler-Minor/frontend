@@ -7,11 +7,11 @@ import Navbar from './components/Navbar/Navbar';
 import Login from './components/Login/Login';
 import SignUp from './components/SignUp/SignUp';
 import MyClasses from './components/MyClasses/MyClasses';
-import ReserveClass from './components/ReserveClass/ReserveClass';
 import Logout from './components/Logout/Logout';
 
-// CreateClass testing
-import CreateClass from './components/CreateClass/CreateClass';
+
+// import CreateClass from './components/CreateClass/CreateClass';
+import AddClass from './components/CreateClass/AddClass';
 
 function App() {
 	return (
@@ -23,12 +23,12 @@ function App() {
 				<Route path="/signup" element={<SignUp />} />
 				{/* Need to align with paths from Hailey */}
 				<Route path="/my-classes" element={<MyClasses />} />
-				<Route path="/reserve-class" element={<ReserveClass />} />
+				
 				<Route path="/logout" element={<Logout />} />
+				<Route path="/add-class" element={<AddClass />} />
 			</Routes>
 
-			{/* Create Class Testing */}
-			<CreateClass />
+			
 		</div>
 	);
 }
