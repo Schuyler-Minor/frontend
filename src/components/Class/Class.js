@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { StyledClass } from '../../styled-comps/index'
 
 const Class = (props) => {
-	// const { fitnessClass } = props;
+	const { fitnessClass } = props;
 	const [open, setOpen] = useState(false);
 	const handleToggle = () => setOpen(!open);
 	return (

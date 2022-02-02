@@ -37,7 +37,7 @@ function App() {
 				</Route>
 				{/* Need to align with paths from Hailey */}
 				<PrivateRoute path="/my-classes" component={MyClasses} />
-				<PrivateRoute path="/reserve-class" component={ReserveClass} />
+				<PrivateRoute path="/available-classes" component={AvailClassList} />
 				<PrivateRoute path="/logout" component={Logout} />
 			</Switch>
 		</div>

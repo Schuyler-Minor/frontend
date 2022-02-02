@@ -2,11 +2,11 @@ import styled from 'styled-components';
 
 export const StyledClass = styled.div`
 display: flex;
-flex-flow: column wrap;
+flex-flow: column nowrap;
 background: lightblue;
 margin: 3% auto;
 color: black;
-width: 100%;
+width: 50%;
 padding: 2%;
 
 & .infoButton{
@@ -20,7 +20,7 @@ padding: 2%;
 }
 
 & .infoDiv button {
-    width: 50%;
+    width: 25%;
     margin: auto;
 }
 
@@ -33,8 +33,8 @@ p{
 }
 `
 export const StyledSearch = styled.div`
-    width: 50%;
-    margin: auto;
+ display: flex;
+ flex-flow: column nowrap;
 
 `
 
@@ -49,5 +49,5 @@ export const FilterContainer = styled.div`
   }
 `
 export const SearchBar = styled.div`
-    margin: auto;
+    margin: 1% auto;
 `
