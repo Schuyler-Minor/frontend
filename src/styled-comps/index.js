@@ -1,5 +1,35 @@
 import styled from 'styled-components';
 
+//AvailFilterContainer Component
+
+export const FilterContainer = styled.div`
+  display: flex;
+  margin: auto;
+  flex-flow: column wrap;
+  item-align: center;
+
+  h2{
+    text-align: center;
+  }
+`
+
+//ClassFilter Component
+
+export const Filter = styled.div`
+ display: flex;
+ flex-flow: column nowrap;
+
+`
+
+export const SearchBar = styled.div`
+    margin: 1% auto;
+`
+
+export const Checkboxes = styled.div`
+
+`
+//Class Component
+
 export const StyledClass = styled.div`
 display: flex;
 flex-flow: column nowrap;
@@ -31,23 +61,4 @@ h3 {
 p{
     margin: auto;
 }
-`
-export const StyledSearch = styled.div`
- display: flex;
- flex-flow: column nowrap;
-
-`
-
-export const FilterContainer = styled.div`
-  display: flex;
-  margin: auto;
-  flex-flow: column wrap;
-  item-align: center;
-
-  h2{
-    text-align: center;
-  }
-`
-export const SearchBar = styled.div`
-    margin: 1% auto;
 `

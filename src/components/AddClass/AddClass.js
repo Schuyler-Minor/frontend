@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
 import AddClassForm from "./AddClassForm";
+import { useHistory } from 'react-router-dom';
+import axios from 'axios'
 import * as yup from 'yup';
-import schema from "./AddSchema";
+import schema from "../../validations/AddClassSchema";
 
 
 const initialFormValues = {
@@ -20,17 +22,15 @@ const initialFormErrors = {
     class_type: '',
 }
 
-
 const initialDisabled = true;
 
 const AddClass = () => {
 
-    const [formValues, setFormValues] = useState(initialFormValues)
+    const [newClass, setNewClass] = useState(initialFormValues)
     const [formErrors, setFormErrors] = useState(initialFormErrors)
     const [disabled, setDisabled] = useState(initialDisabled)
 
- 
-    
+    const { push } = useHistory();
 
     // const postNewClass = newClass => {
 
@@ -45,38 +45,34 @@ const AddClass = () => {
 
     const inputChange = (name, value) => {
         validate(name, value)
-        setFormValues({
-            ...formValues,
+        setNewClass({
+            ...newClass,
             [name]: value
         })
     }
 
-    const formSubmit = () => {
-        // const newClass = {
-        //     class_name: formValues.class_name.trim(),
-        //     class_type: formValues.class_type.trim() ,
-        //     start: formValues.start,
-        //     duration: formValues.duration ,
-        //     dropdown: formValues.dropdown.trim(),
-        //     location: formValues.location.trim(),
-        //     maxSize: formValues.maxSize,
-        //     currentClients: formValues.currentClients ,
-        // }
-    //    postNewClass(newClass) 
-}
+    const formSubmit = (e) => {
+        e.preventDefault();
+        axios.post('https://anywhere-fitness-07-backend.herokuapp.com/api/classes ', newClass)
+            .then(res=>{
+                setNewClass(res.data);
+                push('/available-classes');
+			})
+			.catch(err=>{
+				console.log(err);
+			})
+    }
 
-useEffect(() => {
-
-    schema.isValid(formValues).then(valid => setDisabled(!valid))
-  }, [formValues])
+    useEffect(() => {
+        schema.isValid(newClass).then(valid => setDisabled(!valid))
+    }, [newClass])
 
     
 
     return(
         <div>
-         
             <AddClassForm 
-            values={formValues}
+            values={newClass}
             change={inputChange}
             submit={formSubmit}
             disabled={disabled}

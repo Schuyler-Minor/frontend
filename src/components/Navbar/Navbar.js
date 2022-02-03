@@ -18,7 +18,7 @@ const Navbar = ({ logged }) => {
 						<Link to="/my-classes">My Classes</Link>
 						<Link to="/available-classes">Available Classes</Link>
 						<Link to="/logout">Logout</Link>
-            <Link to="/add-class">Add Class</Link>
+           				<Link to="/add-class">Create Class</Link>
 					</>
 				)}
 			</nav>

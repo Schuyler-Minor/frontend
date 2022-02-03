@@ -8,6 +8,7 @@ const AvailClassList = () => {
 
     const initialState = [];
     const [classes, setClasses] = useState(initialState);
+    //const [reservedClass, setReservedClass] = useState([]);
 
     useEffect(() => {
       axios
@@ -17,6 +18,8 @@ const AvailClassList = () => {
         })
         .catch((err) => console.log(err));
     }, []);
+
+  
 
   return (
     
