@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import {Link} from 'react-router-dom';
 
 import { StyledClass } from '../../styled-comps/index'
 
@@ -29,7 +30,14 @@ const Class = (props) => {
                 <button>Register</button>
             </div>)
             : 
-            (<button className = "infoButton" onClick={handleToggle}>More Info</button>)
+            (
+                <div>
+                    <button className = "infoButton" onClick={handleToggle}>More Info</button>
+                    <Link to={`edit-class/${fitnessClass.class_id}`}>Edit</Link>
+                </div>
+            
+            )
+            
         }
 
     </StyledClass>);
