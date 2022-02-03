@@ -7,6 +7,7 @@ const Class = (props) => {
 	const [open, setOpen] = useState(false);
 	const handleToggle = () => setOpen(!open);
 	return (
+
 		<StyledClass>
 
         <h3>{fitnessClass.class_name}</h3>
@@ -18,7 +19,7 @@ const Class = (props) => {
     
                 <p> Intensity: {fitnessClass.intensity_level}</p>
 
-					<p>Location: {fitnessClass.location}</p>
+				<p>Location: {fitnessClass.location}</p>
 
                 <p>Duration: {fitnessClass.duration}</p>
 
