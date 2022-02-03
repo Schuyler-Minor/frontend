@@ -1,11 +1,12 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 const Logout = () => {
-	return (
-		<div>
-			<h1>Logging out ...</h1>
-		</div>
-	);
+	useEffect(() => {
+		localStorage.removeItem('token');
+		window.location.href = '/my-classes';
+	}, []);
+	return <div></div>;
 };
 
 export default Logout;
+
