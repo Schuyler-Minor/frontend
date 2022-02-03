@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import AddClassForm from "./AddClassForm";
+import EditClassForm from "./EditClassForm";
 import { useHistory } from 'react-router-dom';
 import axios from 'axios'
 import * as yup from 'yup';
@@ -7,14 +7,14 @@ import schema from "../../validations/FormSchema";
 
 
 const initialFormValues = {
-    class_name: 'FitnessClass',
-    class_type: 'workout',
-    start: '12:00',
-    duration: '60',
-    dropdown: '3',
-    location: 'Park',
-    maxSize: '10',
-    currentClients: '30',
+    class_name: '',
+    class_type: '',
+    start: '',
+    duration: '',
+    dropdown: '',
+    location: '',
+    maxSize: '',
+    currentClients: '',
 }
 
 const initialFormErrors = {
@@ -24,17 +24,13 @@ const initialFormErrors = {
 
 const initialDisabled = true;
 
-const AddClass = () => {
+const EditClass = () => {
 
     const [newClass, setNewClass] = useState(initialFormValues)
     const [formErrors, setFormErrors] = useState(initialFormErrors)
     const [disabled, setDisabled] = useState(initialDisabled)
 
     const { push } = useHistory();
-
-    // const postNewClass = newClass => {
-
-    // }
 
     const validate = (name, value) => {
         yup.reach(schema, name)
@@ -52,7 +48,7 @@ const AddClass = () => {
     }
 
     const formSubmit = (e) => {
-       // e.preventDefault();
+        e.preventDefault();
         axios.post('https://anywhere-fitness-07-backend.herokuapp.com/api/classes', newClass)
             .then(res=>{
                 setNewClass(res.data);
@@ -71,8 +67,7 @@ const AddClass = () => {
 
     return(
         <div>
-            <AddClassForm 
-            values={newClass}
+            <EditClassForm 
             change={inputChange}
             submit={formSubmit}
             disabled={disabled}
@@ -83,4 +78,4 @@ const AddClass = () => {
 
 }
 
-export default AddClass;
+export default EditClass;
