@@ -1,9 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useHistory } from 'react-router-dom';
 import { SECRET_CODE } from '../../mocks';
 import { Button, Form, Input, Label } from 'reactstrap';
 import './index.css';
+
+import * as yup from 'yup';
+import schema from '../../validations/SignUpSchema';
 
 // Mock Data
 
@@ -14,14 +17,35 @@ const initialState = {
 	code: '',
 };
 
+const initialErrors  = {
+	name: '',
+	password: '',
+	role: ''
+}
+
 const SignUp = ({ setLogged }) => {
+
 	const [signup, setSignup] = useState(initialState);
+	const [errors, setErrors] = useState(initialErrors);
 
 	const { push } = useHistory();
 
-	const change = (e) => {
-		const { name, value } = e.target;
+	const validate = (name, value) => {
+		yup.reach(schema, name)
+		  .validate(value)
+		  .then(() => setErrors({ ...errors, [name]: '' }))
+		  .catch(err => setErrors({ ...errors, [name]: err.errors[0] }))
+	}
 
+	useEffect(() => {
+		schema.isValid(signup)
+	  }, [signup])
+
+	const change = (e) => {
+		
+		const { name, value } = e.target;
+		validate(name, value)
+		
 		setSignup({
 			...signup,
 			[name]: value,
@@ -89,7 +113,9 @@ const SignUp = ({ setLogged }) => {
 					value={signup.name}
 				/>
 			</Label>
-			<br />
+				<br />
+				<span>{errors.name}</span> 
+				<br />
 			<Label>
 				Password
 				<Input
@@ -100,7 +126,9 @@ const SignUp = ({ setLogged }) => {
 					value={signup.password}
 				/>
 			</Label>
-			<br />
+				<br />
+				<span>{errors.password}</span> 
+				<br />
 			<Label>
 				Sign Up as <br />
 				<Input
