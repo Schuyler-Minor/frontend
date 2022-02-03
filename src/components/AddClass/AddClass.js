@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import AddClassForm from "./AddClassForm";
 import * as yup from 'yup';
-import schema from "./AddSchema";
+import schema from "../../validations/AddClassSchema";
 
 
 const initialFormValues = {
