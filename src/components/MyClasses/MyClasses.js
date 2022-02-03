@@ -20,10 +20,10 @@ const MyClasses = () => {
 	return (
 		<div>
 			<h1>My Classes</h1>
-
+{/* 
 			{classes.map((item, idx) => (
 				<Class key={idx} class={item} />
-			))}
+			))} */}
 		</div>
 	);
 };
