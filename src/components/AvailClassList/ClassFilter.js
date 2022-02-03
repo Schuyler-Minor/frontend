@@ -4,6 +4,7 @@ import { Filter, SearchBar, Checkboxes } from '../../styled-comps/index';
 //import axiosWithAuth from '../../utils/axiosWithAuth';
 
 const ClassFilter = (props) => {
+	const { classes } = props;
 
   const [searchTerm, setSearchTerm] = useState("");
   //const [reservedClass, setReservedClass] = useState([]);
@@ -74,7 +75,6 @@ const ClassFilter = (props) => {
 
     </Filter>
     );
-}
+};
 
 export default ClassFilter;
-

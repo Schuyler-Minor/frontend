@@ -14,7 +14,6 @@ import AvailClassList from './components/AvailClassList/AvailClassList';
 
 import Logout from './components/Logout/Logout';
 
-
 // import CreateClass from './components/CreateClass/CreateClass';
 import AddClass from './components/AddClass/AddClass';
 
@@ -34,7 +33,7 @@ function App() {
 		<div className="App">
 			<Navbar logged={logged} />
 			<Switch>
-				<PrivateRoute exact path="/" component={MyClasses} />
+				<Route exact path="/" component={MyClasses} />
 				<Route path="/login">
 					<Login setLogged={setLogged} />
 				</Route>
@@ -42,12 +41,11 @@ function App() {
 					<SignUp setLogged={setLogged} />
 				</Route>
 				{/* Need to align with paths from Hailey */}
-				<PrivateRoute path='/add-class' component={AddClass}/>
-				<PrivateRoute path="/my-classes" component={MyClasses} />
-				<PrivateRoute path="/available-classes" component={AvailClassList} />
-				<PrivateRoute path="/logout" component={Logout} />
-			</Switch>
 
+				<Route path="/my-classes" component={MyClasses} />
+				<Route path="/available-classes" component={AvailClassList} />
+				<Route path="/logout" component={Logout} />
+			</Switch>
 		</div>
 	);
 }
