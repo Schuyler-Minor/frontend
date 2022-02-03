@@ -20,13 +20,17 @@ const initialState = {
 const initialErrors  = {
 	name: '',
 	password: '',
-	role: ''
+	role: '',
 }
+
+
+const initialDisabled = true;
 
 const SignUp = ({ setLogged }) => {
 
 	const [signup, setSignup] = useState(initialState);
 	const [errors, setErrors] = useState(initialErrors);
+	const [disabled, setDisabled] = useState(initialDisabled)
 
 	const { push } = useHistory();
 
@@ -38,14 +42,14 @@ const SignUp = ({ setLogged }) => {
 	}
 
 	useEffect(() => {
-		schema.isValid(signup)
-	  }, [signup])
+        schema.isValid(signup).then(valid => setDisabled(!valid))
+    }, [signup])
 
 	const change = (e) => {
 		
 		const { name, value } = e.target;
 		validate(name, value)
-		
+
 		setSignup({
 			...signup,
 			[name]: value,
@@ -163,7 +167,7 @@ const SignUp = ({ setLogged }) => {
 				</div>
 			) : null}
 			<br />
-			<Button>Sign Up</Button>
+			<Button disabled={disabled}>Sign Up</Button>
 		</Form>
 	);
 };

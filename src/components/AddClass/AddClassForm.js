@@ -4,6 +4,7 @@ import { Button, Form, Input, Label} from 'reactstrap';
 const AddClassForm = (props) => {
 
     const { values, submit, change, disabled, errors } = props
+    
 
     const onSubmit = evt => {
         evt.preventDefault()
@@ -111,8 +112,6 @@ const AddClassForm = (props) => {
                 <br />
               
                     {/* ERRORS */}
-      
-                
                 <Button disabled={disabled} type="submit">Create Class</Button>
         </Form>
     )

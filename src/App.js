@@ -42,7 +42,7 @@ function App() {
 					<SignUp setLogged={setLogged} />
 				</Route>
 				{/* Need to align with paths from Hailey */}
-
+				<PrivateRoute path='/add-class' component={AddClass}/>
 				<PrivateRoute path="/my-classes" component={MyClasses} />
 				<PrivateRoute path="/available-classes" component={AvailClassList} />
 				<PrivateRoute path="/logout" component={Logout} />

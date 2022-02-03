@@ -9,6 +9,9 @@ const signUpSchema = yup.object().shape({
         .string()
         .trim()
         .required('Password is required'),
+    role: yup
+        .string()
+        .required('Please choose a role.'),
 })
 
 export default signUpSchema;

@@ -17,14 +17,19 @@ const initialState = {
 
 const initialErrors  = {
 	name: '',
-	password: ''
+	password: '',
+	role: ''
 }
+
+const initialDisabled = true;
 
 const Login = ({ setLogged }) => {
 	
 	const { push } = useHistory();
 	const [login, setLogin] = useState(initialState);
 	const [errors, setErrors] = useState(initialErrors);
+	const [disabled, setDisabled] = useState(initialDisabled);
+
 
 	const validate = (name, value) => {
 		yup.reach(schema, name)
@@ -34,8 +39,8 @@ const Login = ({ setLogged }) => {
 	}
 
 	useEffect(() => {
-		schema.isValid(login)
-	  }, [login])
+        schema.isValid(login).then(valid => setDisabled(!valid))
+    }, [login])
 
 	const change = (e) => {
 
@@ -143,7 +148,7 @@ const Login = ({ setLogged }) => {
 			<br />
 			<span>{errors.role}</span> 
 			<br />
-			<Button>Login</Button>
+			<Button disabled={disabled}>Login</Button>
 		</Form>
 	);
 };
