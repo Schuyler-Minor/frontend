@@ -74,10 +74,12 @@ const AddClassForm = (props) => {
                 value={values.dropdown}
                 onChange={onChange}
                  >
-                    <option>-Select Intensity-</option>
-                    <option>Low</option>
-                    <option>Medium</option>
-                    <option>High</option>
+                <option>-Select Intensity-</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
                 </select>
             </Label>
                 <br/>
