@@ -8,9 +8,15 @@ import Navbar from './components/Navbar/Navbar';
 import Login from './components/Login/Login';
 import SignUp from './components/SignUp/SignUp';
 import MyClasses from './components/MyClasses/MyClasses';
+
 import AvailClassList from './components/AvailClassList/AvailClassList';
 //import ReserveClass from './components/ReserveClass/ReserveClass';
+
 import Logout from './components/Logout/Logout';
+
+
+// import CreateClass from './components/CreateClass/CreateClass';
+import AddClass from './components/AddClass/AddClass';
 
 function App() {
 	const [logged, setLogged] = useState(false);
@@ -36,10 +42,12 @@ function App() {
 					<SignUp setLogged={setLogged} />
 				</Route>
 				{/* Need to align with paths from Hailey */}
+
 				<PrivateRoute path="/my-classes" component={MyClasses} />
 				<PrivateRoute path="/available-classes" component={AvailClassList} />
 				<PrivateRoute path="/logout" component={Logout} />
 			</Switch>
+
 		</div>
 	);
 }
